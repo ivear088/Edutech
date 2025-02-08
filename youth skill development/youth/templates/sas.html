@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Assessment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .questionnaire {
+            margin-top: 20px;
+        }
+        .questionnaire h2 {
+            margin-top: 0;
+        }
+        .questionnaire form {
+            display: flex;
+            flex-direction: column;
+        }
+        .questionnaire label {
+            margin-bottom: 10px;
+        }
+        .questionnaire textarea {
+            width: 100%;
+            height: 60px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .questionnaire input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .questionnaire input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Skill Assessment</h1>
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>What Makes Us the Best?</h2>
+            <p>What makes us the best is our unwavering commitment to delivering exceptional value through a user-focused and innovative approach. We distinguish ourselves by offering tailored solutions that align with each individual’s career goals and interests, ensuring that recommendations and resources are highly relevant. Our platform provides comprehensive access to a wide array of internships, hackathons, and educational events, all supported by up-to-date and accurate information. Designed with user experience in mind, our intuitive interface facilitates easy navigation and quick access to valuable opportunities. By leveraging industry expertise and fostering a supportive community, we offer credible content and valuable insights. Our dedication to continuous improvement and the reliability of our resources further solidifies our position as the leading platform for career and educational advancement.</p>
+        </div>
+        <div class="section">
+            <h2>How Skill Assessments Are Conducted</h2>
+            <p>Skills assessment is conducted through a structured approach involving several key steps. Initially, individuals complete self-assessment surveys to evaluate their own skills and knowledge areas. Following this, standardized tests and practical exercises tailored to specific skills are administered to gauge proficiency. Performance in these tests is analyzed using predefined metrics to ensure consistency and accuracy. Additionally, feedback from previous work experiences, such as performance reviews and project outcomes, is incorporated to provide a comprehensive view. Peer assessments and supervisor evaluations are also utilized to capture a broader perspective on the individual's abilities. All collected data is aggregated and analyzed to identify strengths and areas for improvement. Personalized reports are then generated, offering insights and recommendations for skill development. Regular follow-ups and reassessments are scheduled to track progress and adjust learning paths as needed.</p>
+        </div>
+        <div class="section questionnaire">
+            <h2>Technical Skill Assessment</h2>
+            <form action="sas_view" method="POST">
+                {% csrf_token %}
+                <label for="java">Java Question: Describe the difference between a class and an interface in Java.</label>
+                <textarea id="java" name="java" placeholder="Your answer here..."></textarea>
+                
+                <label for="python">Python Question: How does Python manage memory and garbage collection?</label>
+                <textarea id="python" name="python" placeholder="Your answer here..."></textarea>
+                
+                <label for="ruby">Ruby Question: What is the purpose of a mixin in Ruby?</label>
+                <textarea id="ruby" name="ruby" placeholder="Your answer here..."></textarea>
+                
+                <label for="html">HTML Question: What is the difference between the <div> and <span> elements in HTML?</label>
+                <textarea id="html" name="html" placeholder="Your answer here..."></textarea>
+                
+                <label for="datascience">Data Science Question: Explain the concept of overfitting in machine learning.</label>
+                <textarea id="datascience" name="datascience" placeholder="Your answer here..."></textarea>
+                
+                <input type="submit" value="Submit Answers">
+            </form>            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Input Form</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('{% static 'assets/images/banner-item-03.jpg' %}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: Arial, sans-serif;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9); /* Add transparency */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="form-container">
+    <h2 class="text-center">Data Input Form</h2>
+    <form action="analysis" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="skills">Skills</label>
+        <input type="text" class="form-control" id="skills" placeholder="Enter your skills" name="skills" required>
+      </div>
+      <div class="form-group">
+        <label for="education_major">Major Education</label>
+        <input type="text" class="form-control" id="education_major" placeholder="Enter your education major" name="education_major" required>
+      </div>
+      <div class="form-group">
+        <label for="years_of_experience">Years of Experience</label>
+        <input type="number" class="form-control" id="years_of_experience" placeholder="Enter your years of experience" name="years_of_experience" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
